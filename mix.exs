@@ -9,12 +9,12 @@ defmodule Flasked.Mixfile do
       name: "flasked",
       version: @version,
       elixir: "~> 1.2",
-      description: description,
+      description: description(),
       source_url: "https://github.com/asaaki/flasked",
       homepage_url: "http://hexdocs.pm/flasked",
-      package: package,
+      package: package(),
       docs: &docs/0,
-      deps: deps
+      deps: deps()
     ]
   end
 
@@ -31,7 +31,7 @@ defmodule Flasked.Mixfile do
 
   defp package do
     [
-      files: package_files,
+      files: package_files(),
       maintainers: ["Christoph Grabo"],
       licenses: ["MIT"],
       links: %{
