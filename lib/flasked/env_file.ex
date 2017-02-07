@@ -4,10 +4,11 @@ defmodule Flasked.EnvFile do
   @key_value_delimiter "="
 
   def load do
-    Mix.env
+    current_env = Mix.env
     |> to_string
     |> String.downcase
-    |> [".env", ".env.#{&1}"]
+
+    [".env", ".env.#{current_env}"]
     |> load
   end
 
