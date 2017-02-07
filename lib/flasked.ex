@@ -11,6 +11,7 @@ defmodule Flasked do
 
   use Application
   alias Flasked.Config
+  alias Flasked.EnvFile
   alias Flasked.Bottler
 
   def start(_type, _args) do
@@ -21,6 +22,7 @@ defmodule Flasked do
 
   def bottle_it do
     Config.check
+    EnvFile.load
     Bottler.run
     :ok
   end
