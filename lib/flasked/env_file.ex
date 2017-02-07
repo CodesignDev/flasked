@@ -32,8 +32,8 @@ defmodule Flasked.EnvFile do
   end
 
   defp parse_value(value) do
-    case String.starts_with?(value "\"") do
-      true -> unqoute_string(value)
+    case String.starts_with?(value, "\"") do
+      true -> unquote_string(value)
       _ -> value |> String.split("#") |> List.first
     end
   end
